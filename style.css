@@ -1106,7 +1106,7 @@ a.footer-cta:hover {
   .section-title { font-size: 2.5rem; }
   .sobre-container, .b2b-container { grid-template-columns: 1fr; gap: 4rem; }
   .sobre-visual { padding: 1rem 1rem 2rem 0; max-width: 520px; margin: 0 auto; }
-  .sobre-image-wrap { aspect-ratio: 4 / 3; }
+  .sobre-image-wrap { aspect-ratio: 4 / 5; }
   .sobre-floating-card { right: 0; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1117,10 +1117,38 @@ a.footer-cta:hover {
 @media (max-width: 768px) {
   .header .nav, .header .btn { display: none; }
   .mobile-menu-btn { display: block; }
+
+  /* Menu mobile aberto */
+  .header .nav.active {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-top: 1px solid var(--silver);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  }
+  .header .nav.active .nav-link {
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid var(--silver);
+  }
+  .header .nav.active .nav-link:last-child { border-bottom: none; }
+
   .headline { font-size: 2.5rem; }
   .subheadline { font-size: 1.25rem; }
   .hero { padding-top: 160px; min-height: auto; padding-bottom: 100px; }
   .hero-badges { flex-wrap: wrap; white-space: normal; }
+
+  /* Sobre: texto primeiro, imagem depois (e a imagem inteira aparece) */
+  .sobre-visual { order: 2; padding: 1.5rem 0 0 0; max-width: 100%; }
+  .sobre-text-area { order: 1; }
+  .sobre-image-wrap { aspect-ratio: 4 / 5; }
+
   .sobre-highlights { grid-template-columns: 1fr; }
   .sobre-floating-card { position: static; max-width: 100%; margin-top: 1.5rem; }
   .testimonials-carousel { padding: 0; }
