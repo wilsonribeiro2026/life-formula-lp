@@ -95,7 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function goTo(index) {
       current = (index + pages) % pages;
-      track.style.transform = `translateX(-${current * 100}%)`;
+      const firstSlideOnPage = slides[current * perPage];
+      const offset = firstSlideOnPage ? firstSlideOnPage.offsetLeft : 0;
+      track.style.transform = `translateX(-${offset}px)`;
       dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
         d.classList.toggle('active', i === current)
       );
@@ -109,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         current = 0;
         buildDots();
         goTo(0);
+      } else {
+        goTo(current);  // viewport mudou de largura, recalcula offset em px
       }
     }
 

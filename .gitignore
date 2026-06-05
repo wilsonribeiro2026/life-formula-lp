@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Source/working assets (originais, não usados pelo site)
+Videos/
+*.pdf.png
+LOGO-Photoroom.png
+BANNER.png
+ChatGPT Image*
+
+# Arquivos de prévia/teste (não vão para produção)
+_test_*.html
+_proof_*.png
+_test_*.png
+logo-white.png
+biomedica.png
